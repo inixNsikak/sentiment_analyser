@@ -43,6 +43,7 @@ nltk.download('punkt')
 
 # Initialize the Tkinter window
 root = tk.Tk()
+root.iconbitmap(r'Logo\favicon (1).ico')
 root.title("Sentiment Analyser")
 root.geometry('400x400')
 
@@ -193,6 +194,7 @@ def show_results():
     # Display results in a window
     result_window = tk.Toplevel(root)
     result_window.title("Classification Report and Graph")
+    result_window.iconbitmap(r'Logo\favicon (1).ico')
 
     # Display accuracy
     accuracy_label = tk.Label(result_window, text=f"Accuracy: {accuracy}")
@@ -201,7 +203,7 @@ def show_results():
     # Display classification report
     report_label = tk.Label(result_window, text="Classification Report:")
     report_label.pack()
-    report_text = tk.Text(result_window, height=20, width=60)
+    report_text = tk.Text(result_window, height=10, width=60)
     report_text.insert(tk.END, classification_report(y_test, y_pred))
     report_text.pack()
 
@@ -259,16 +261,16 @@ classification_report_button = tk.Button(root, text="Show Classification Report"
 # sentiment_button = tk.Button(root, text="Sentiment Analysis Button")  # Define sentiment_button
 
 # Layout
-load_button.pack()
-preprocess_button.pack()
-find_sentiment_button.pack()
+load_button.pack(padx=20,pady=15)
+preprocess_button.pack(padx=20,pady=15)
+find_sentiment_button.pack(padx=20,pady=15)
 
-train_and_evaluate_model_button.pack()
+train_and_evaluate_model_button.pack(padx=20,pady=15)
 info_label.pack()
-result_label.pack()
+result_label.pack(padx=20,pady=15)
 # graph_label.pack()
 # compound_label.pack()
-classification_report_button.pack()
+classification_report_button.pack(padx=20,pady=15)
 # sentiment_button.pack()  # Pack the sentiment_button
 
 root.mainloop()
